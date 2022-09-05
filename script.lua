@@ -1,10 +1,10 @@
+-- Gui to Lua
+-- Version: 3.2
 
-local real = Instance.new("ScreenGui")
-local real_2 = Instance.new("TextButton")
+-- Instances:
+
+local real = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
-local UIGradient = Instance.new("UIGradient")
-local real_3 = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
 local Frame = Instance.new("Frame")
 local lp = Instance.new("TextButton")
 local LocalPlayer = Instance.new("Frame")
@@ -27,44 +27,21 @@ local TextLabel_7 = Instance.new("TextLabel")
 --Properties:
 
 real.Name = "real."
-real.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-real.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+real.Parent = game.StarterGui["real."]
+real.Active = true
+real.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+real.Position = UDim2.new(0.336348683, 0, 0.337864906, 0)
+real.Size = UDim2.new(0, 424, 0, 305)
 
-real_2.Name = "real."
-real_2.Parent = real
-real_2.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-real_2.Position = UDim2.new(0.0871710479, 0, 0.390057355, 0)
-real_2.Size = UDim2.new(0, 200, 0, 50)
-real_2.Font = Enum.Font.SourceSans
-real_2.Text = "OPEN UI"
-real_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-real_2.TextScaled = true
-real_2.TextSize = 14.000
-real_2.TextStrokeTransparency = 0.000
-real_2.TextWrapped = true
+UICorner.Parent = real
 
-UICorner.Parent = real_2
-
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient.Parent = real_2
-
-real_3.Name = "real."
-real_3.Parent = real
-real_3.Active = true
-real_3.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-real_3.Position = UDim2.new(0.336348683, 0, 0.337864906, 0)
-real_3.Size = UDim2.new(0, 424, 0, 305)
-real_3.Visible = false
-
-UICorner_2.Parent = real_3
-
-Frame.Parent = real_3
+Frame.Parent = real
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.Position = UDim2.new(0.22169812, 0, 0, 0)
 Frame.Size = UDim2.new(0, 8, 0, 305)
 
 lp.Name = "lp"
-lp.Parent = real_3
+lp.Parent = real
 lp.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 lp.Position = UDim2.new(0.0141509436, 0, 0.226229519, 0)
 lp.Size = UDim2.new(0, 82, 0, 50)
@@ -122,7 +99,7 @@ TextButton.TextStrokeTransparency = 0.000
 TextButton.TextWrapped = true
 
 c.Name = "c"
-c.Parent = real_3
+c.Parent = real
 c.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 c.Position = UDim2.new(0.0141509436, 0, 0.422950834, 0)
 c.Size = UDim2.new(0, 82, 0, 50)
@@ -182,7 +159,7 @@ TextLabel_4.TextStrokeTransparency = 0.000
 TextLabel_4.TextWrapped = true
 
 h.Name = "h"
-h.Parent = real_3
+h.Parent = real
 h.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 h.Position = UDim2.new(0.0141509436, 0, 0.0327869058, 0)
 h.Size = UDim2.new(0, 82, 0, 50)
@@ -227,7 +204,7 @@ TextLabel_6.TextSize = 14.000
 TextLabel_6.TextWrapped = true
 
 m.Name = "m"
-m.Parent = real_3
+m.Parent = real
 m.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 m.Position = UDim2.new(0.0141509436, 0, 0.626229525, 0)
 m.Size = UDim2.new(0, 82, 0, 50)
@@ -262,33 +239,7 @@ TextLabel_7.TextWrapped = true
 
 -- Scripts:
 
-local function EPNE_fake_script() -- real_2.LocalScript 
-	local script = Instance.new('LocalScript', real_2)
-
-	local count = 1
-	script.Parent.MouseButton1Click:Connect(function()
-		for i = 6, 0, -1 do
-			wait(1)
-			script.Parent.Text = "OPENING"
-			if count == 1 then
-				script.Parent.Text = "OPENING."
-				count = 2 
-			elseif count == 2 then
-				script.Parent.Text = "OPENING.."
-				count = 3
-			elseif count == 3 then
-				script.Parent.Text = "OPENING..."
-				count = 1
-			end
-		end
-		task.wait(.1)
-		script.Parent.Parent["real."].Visible = true
-		task.wait(.1)
-		script.Parent:Destroy()
-	end)
-end
-coroutine.wrap(EPNE_fake_script)()
-local function IZRCRYF_fake_script() -- TextButton.LocalScript 
+local function TRGBWTV_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	local plr = game.Players.LocalPlayer
@@ -296,8 +247,8 @@ local function IZRCRYF_fake_script() -- TextButton.LocalScript
 		plr.Character.Humanoid.WalkSpeed = script.Parent.Parent.TextBox.Text	
 	end)
 end
-coroutine.wrap(IZRCRYF_fake_script)()
-local function MUIHOFY_fake_script() -- lp.LocalScript 
+coroutine.wrap(TRGBWTV_fake_script)()
+local function UMTB_fake_script() -- lp.LocalScript 
 	local script = Instance.new('LocalScript', lp)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -307,8 +258,8 @@ local function MUIHOFY_fake_script() -- lp.LocalScript
 		script.Parent.Parent.m.extra.Visible = false
 	end)
 end
-coroutine.wrap(MUIHOFY_fake_script)()
-local function JUQDS_fake_script() -- c.LocalScript 
+coroutine.wrap(UMTB_fake_script)()
+local function TZDOJ_fake_script() -- c.LocalScript 
 	local script = Instance.new('LocalScript', c)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -318,20 +269,20 @@ local function JUQDS_fake_script() -- c.LocalScript
 		script.Parent.Parent.m.extra.Visible = false
 	end)
 end
-coroutine.wrap(JUQDS_fake_script)()
-local function XYFN_fake_script() -- TextLabel_5.LocalScript 
+coroutine.wrap(TZDOJ_fake_script)()
+local function AUJZPLH_fake_script() -- TextLabel_5.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel_5)
 
 	script.Parent.Text = "Welcome, "..game.Players.LocalPlayer.Name.."!"
 end
-coroutine.wrap(XYFN_fake_script)()
-local function XLCWK_fake_script() -- TextLabel_6.LocalScript 
+coroutine.wrap(AUJZPLH_fake_script)()
+local function YKJIXX_fake_script() -- TextLabel_6.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel_6)
 
 	script.Parent.Text = "Welcome, "..game.Players.LocalPlayer.Name.."!"
 end
-coroutine.wrap(XLCWK_fake_script)()
-local function GXQU_fake_script() -- h.LocalScript 
+coroutine.wrap(YKJIXX_fake_script)()
+local function WKHMZ_fake_script() -- h.LocalScript 
 	local script = Instance.new('LocalScript', h)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -341,8 +292,8 @@ local function GXQU_fake_script() -- h.LocalScript
 		script.Parent.Parent.m.extra.Visible = false
 	end)
 end
-coroutine.wrap(GXQU_fake_script)()
-local function FWMAYEP_fake_script() -- m.LocalScript 
+coroutine.wrap(WKHMZ_fake_script)()
+local function GKXVFCD_fake_script() -- m.LocalScript 
 	local script = Instance.new('LocalScript', m)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -352,10 +303,10 @@ local function FWMAYEP_fake_script() -- m.LocalScript
 		script.Parent.Parent.c.Credits.Visible = false
 	end)
 end
-coroutine.wrap(FWMAYEP_fake_script)()
-local function HRNYFIG_fake_script() -- real_3.LocalScript 
-	local script = Instance.new('LocalScript', real_3)
+coroutine.wrap(GKXVFCD_fake_script)()
+local function NIIM_fake_script() -- real.LocalScript 
+	local script = Instance.new('LocalScript', real)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(HRNYFIG_fake_script)()
+coroutine.wrap(NIIM_fake_script)()
