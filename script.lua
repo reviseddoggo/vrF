@@ -1,4 +1,3 @@
-
 local dumb = Instance.new("ScreenGui")
 local dump = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -8,6 +7,10 @@ local LocalPlayer = Instance.new("Frame")
 local TextBox = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
+local sp = Instance.new("TextLabel")
+local p = Instance.new("TextButton")
+local id = Instance.new("TextBox")
+local s = Instance.new("TextButton")
 local c = Instance.new("TextButton")
 local Credits = Instance.new("Frame")
 local TextLabel_2 = Instance.new("TextLabel")
@@ -67,7 +70,7 @@ TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.Position = UDim2.new(0.357142866, 0, 0.0327868834, 0)
 TextBox.Size = UDim2.new(0, 200, 0, 50)
 TextBox.Font = Enum.Font.SourceSans
-TextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.PlaceholderColor3 = Color3.fromRGB(255, 200, 0)
 TextBox.PlaceholderText = "Type Walkspeed here"
 TextBox.Text = ""
 TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -99,6 +102,60 @@ TextButton.TextScaled = true
 TextButton.TextSize = 14.000
 TextButton.TextStrokeTransparency = 0.000
 TextButton.TextWrapped = true
+
+sp.Name = "sp"
+sp.Parent = LocalPlayer
+sp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+sp.BackgroundTransparency = 1.000
+sp.Position = UDim2.new(0.0217391308, 0, 0.416393429, 0)
+sp.Size = UDim2.new(0, 108, 0, 50)
+sp.Font = Enum.Font.SourceSans
+sp.Text = "SOUND PLAYER:"
+sp.TextColor3 = Color3.fromRGB(255, 255, 255)
+sp.TextScaled = true
+sp.TextSize = 14.000
+sp.TextStrokeTransparency = 0.000
+sp.TextWrapped = true
+
+p.Name = "p"
+p.Parent = LocalPlayer
+p.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+p.Position = UDim2.new(0.357142866, 0, 0.616393447, 0)
+p.Size = UDim2.new(0, 200, 0, 50)
+p.Font = Enum.Font.SourceSans
+p.Text = "PLAY SOUND"
+p.TextColor3 = Color3.fromRGB(255, 255, 255)
+p.TextScaled = true
+p.TextSize = 14.000
+p.TextStrokeTransparency = 0.000
+p.TextWrapped = true
+
+id.Name = "id"
+id.Parent = LocalPlayer
+id.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+id.Position = UDim2.new(0.357142866, 0, 0.422950804, 0)
+id.Size = UDim2.new(0, 200, 0, 50)
+id.Font = Enum.Font.SourceSans
+id.PlaceholderColor3 = Color3.fromRGB(255, 200, 0)
+id.PlaceholderText = "Type sound Id here"
+id.Text = ""
+id.TextColor3 = Color3.fromRGB(255, 255, 255)
+id.TextScaled = true
+id.TextSize = 14.000
+id.TextWrapped = true
+
+s.Name = "s"
+s.Parent = LocalPlayer
+s.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+s.Position = UDim2.new(0.357142866, 0, 0.790163934, 0)
+s.Size = UDim2.new(0, 200, 0, 50)
+s.Font = Enum.Font.SourceSans
+s.Text = "STOP SOUND"
+s.TextColor3 = Color3.fromRGB(255, 255, 255)
+s.TextScaled = true
+s.TextSize = 14.000
+s.TextStrokeTransparency = 0.000
+s.TextWrapped = true
 
 c.Name = "c"
 c.Parent = dump
@@ -241,16 +298,7 @@ TextLabel_7.TextWrapped = true
 
 -- Scripts:
 
-local function VXNTL_fake_script() -- TextButton.LocalScript 
-	local script = Instance.new('LocalScript', TextButton)
-
-	local plr = game.Players.LocalPlayer
-	script.Parent.MouseButton1Click:Connect(function()
-		plr.Character.Humanoid.WalkSpeed = script.Parent.Parent.TextBox.Text	
-	end)
-end
-coroutine.wrap(VXNTL_fake_script)()
-local function DOYTVZ_fake_script() -- lp.LocalScript 
+local function SWPXC_fake_script() -- lp.LocalScript 
 	local script = Instance.new('LocalScript', lp)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -260,8 +308,35 @@ local function DOYTVZ_fake_script() -- lp.LocalScript
 		script.Parent.Parent.m.extra.Visible = false
 	end)
 end
-coroutine.wrap(DOYTVZ_fake_script)()
-local function QGHEUVG_fake_script() -- c.LocalScript 
+coroutine.wrap(SWPXC_fake_script)()
+local function FKKGC_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	local plr = game.Players.LocalPlayer
+	script.Parent.MouseButton1Click:Connect(function()
+		plr.Character.Humanoid.WalkSpeed = script.Parent.Parent.TextBox.Text	
+	end)
+end
+coroutine.wrap(FKKGC_fake_script)()
+local function YVTVZHR_fake_script() -- p.LocalScript 
+	local script = Instance.new('LocalScript', p)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Sound.SoundId = script.Parent.Parent.id.Text
+		wait(.1)
+		script.Sound:Play()
+	end)
+end
+coroutine.wrap(YVTVZHR_fake_script)()
+local function UXUH_fake_script() -- s.LocalScript 
+	local script = Instance.new('LocalScript', s)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.p.LocalScript.Sound:Stop()
+	end)
+end
+coroutine.wrap(UXUH_fake_script)()
+local function HQKSYP_fake_script() -- c.LocalScript 
 	local script = Instance.new('LocalScript', c)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -271,20 +346,20 @@ local function QGHEUVG_fake_script() -- c.LocalScript
 		script.Parent.Parent.m.extra.Visible = false
 	end)
 end
-coroutine.wrap(QGHEUVG_fake_script)()
-local function VHEVJHH_fake_script() -- TextLabel_5.LocalScript 
+coroutine.wrap(HQKSYP_fake_script)()
+local function PMWF_fake_script() -- TextLabel_5.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel_5)
 
 	script.Parent.Text = "Welcome, "..game.Players.LocalPlayer.Name.."!"
 end
-coroutine.wrap(VHEVJHH_fake_script)()
-local function OCYNGWH_fake_script() -- TextLabel_6.LocalScript 
+coroutine.wrap(PMWF_fake_script)()
+local function QAWKZUG_fake_script() -- TextLabel_6.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel_6)
 
-	script.Parent.Text = "Victory Race Fucker | v1.00"
+	script.Parent.Text = "Welcome, "..game.Players.LocalPlayer.Name.."!"
 end
-coroutine.wrap(OCYNGWH_fake_script)()
-local function CHSE_fake_script() -- h.LocalScript 
+coroutine.wrap(QAWKZUG_fake_script)()
+local function MPUSE_fake_script() -- h.LocalScript 
 	local script = Instance.new('LocalScript', h)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -294,8 +369,8 @@ local function CHSE_fake_script() -- h.LocalScript
 		script.Parent.Parent.m.extra.Visible = false
 	end)
 end
-coroutine.wrap(CHSE_fake_script)()
-local function SCYR_fake_script() -- m.LocalScript 
+coroutine.wrap(MPUSE_fake_script)()
+local function OQWIHGF_fake_script() -- m.LocalScript 
 	local script = Instance.new('LocalScript', m)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -305,10 +380,10 @@ local function SCYR_fake_script() -- m.LocalScript
 		script.Parent.Parent.c.Credits.Visible = false
 	end)
 end
-coroutine.wrap(SCYR_fake_script)()
-local function BKBSAV_fake_script() -- dump.LocalScript 
+coroutine.wrap(OQWIHGF_fake_script)()
+local function XZUEXXK_fake_script() -- dump.LocalScript 
 	local script = Instance.new('LocalScript', dump)
 
 	script.Parent.Draggable = true
 end
-coroutine.wrap(BKBSAV_fake_script)()
+coroutine.wrap(XZUEXXK_fake_script)()
